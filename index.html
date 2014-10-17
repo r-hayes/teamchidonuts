@@ -10,6 +10,9 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
+<!--jquery js-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
@@ -25,17 +28,47 @@
             height: 100%;
             width: 100%;
         }
+		#map {
+			margin-top: 5%;
+			height: 95%;
+			}
     </style>
 
 <title>Team CHI Donut Map></title>
 </head> 
 <body> 
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://r-hays.github.io/teamchidonuts/index.html"><strong>Team CHI - Donuts</strong></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="http://r-hayes.github.io/teamchidonuts">Map</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="http://chi.anthropology.msu.edu/fellowships/">About the Group</a></li>
+                <li><a href="http://chi.anthropology.msu.edu/kb/weekly-topics-readings/">About this Project</a></li>
+				<li><a href="http://chi.anthropology.msu.edu/blog/">Member Posts</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+</div>
 <div id="map"</div>
 
 <script> 
 	var map = L.map('map').setView([41.8731903, -96.8420169], 5); 
 		L.tileLayer('http://{s}.tiles.mapbox.com/v3/pinchme123.jno0oa02/{z}/{x}/{y}.png', {
-		attribution: 'Map data &copy; <a href="http://mapbox.com">MapBox</a>',
+		attribution: 'Map data &copy; <a href="http://mapbox.com">MapBox</a> | Navigation bar &copy <a href="http://getbootstrap.com/2.3.2/">Bootstrap</a>',
 		maxZoom: 18,
 		minZoom: 1
 	}).addTo(map);
@@ -48,7 +81,7 @@
 		shadowSize:[41, 41]
 	});
 	L.marker([41.921886, -83.422787]).addTo(map)
-    .bindPopup("Monroe, MI <br><br> Jennifer's hometown is on the River Raisin. It's a small suburban town south of Detroit	and north of Toledo, OH <br><br> <a href='http://en.wikipedia.org/wiki/Monroe,_Michigan' target='_blank'>TEST</a>")
+    .bindPopup("Monroe, MI <br><br> Jennifer's hometown is on the River Raisin. It's a small suburban town south of Detroit	and north of Toledo, OH <br><br> <a href='http://en.wikipedia.org/wiki/Monroe,_Michigan'>TEST</a>")
     .closePopup();
 	
 	L.marker([46.893892, -96.780419]).addTo(map)
@@ -56,7 +89,7 @@
     .closePopup();
 	
 	L.marker([46.243603, -119.104374], {icon: brianIcon}).addTo(map)
-    .bindPopup("<h4>Pasco, WA</h4> Brian's hometown is in eastern Washington on the breathtaking Columbia River, near the <a href='http://www.fws.gov/refuge/Hanford_Reach/' target='_blank'>Hanford Reach</a>. It is one of the three main cities that make up the Tri-Cities.<br><br><a href='http://en.wikipedia.org/wiki/Pasco,_Washington' target='_blank'>Learn More</a>")
+    .bindPopup("<h4>Pasco, WA</h4> Brian's hometown is in eastern Washington on the breathtaking Columbia River, near the <a href='http://www.fws.gov/refuge/Hanford_Reach/'>Hanford Reach</a>. It is one of the three main cities that make up the Tri-Cities.<br><br><a href='http://en.wikipedia.org/wiki/Pasco,_Washington'>Learn More</a>")
     .closePopup();
 
 </script> 
