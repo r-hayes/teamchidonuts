@@ -27,7 +27,7 @@
         }
     </style>
 
-<title Team CHI Donut Map></title>
+<title>Team CHI Donut Map></title>
 </head> 
 <body> 
 <div id="map"</div>
@@ -40,16 +40,23 @@
 		minZoom: 1
 	}).addTo(map);
 	
+	var brianIcon = L.icon({
+		iconUrl: 'Brian.png',
+		shadowUrl: 'pin_shadow.png',
+		iconAnchor:[12, 41],
+		popupAnchor:[1, -34],
+		shadowSize:[41, 41]
+	});
 	L.marker([41.921886, -83.422787]).addTo(map)
-    .bindPopup("Monroe, MI <br> Jennifer's hometown is on the River Raisin. It's a small suburban town south of Detroit	and north of Toledo, OH <br> <a href="http://en.wikipedia.org/wiki/Monroe,_Michigan">TEST</a>")
+    .bindPopup("Monroe, MI <br><br> Jennifer's hometown is on the River Raisin. It's a small suburban town south of Detroit	and north of Toledo, OH <br><br> <a href='http://en.wikipedia.org/wiki/Monroe,_Michigan' target='_blank'>TEST</a>")
     .closePopup();
 	
 	L.marker([46.893892, -96.780419]).addTo(map)
     .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
     .closePopup();
 	
-	L.marker([46.243603, -119.104374]).addTo(map)
-    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
+	L.marker([46.243603, -119.104374], {icon: brianIcon}).addTo(map)
+    .bindPopup("<h4>Pasco, WA</h4> Brian's hometown is in eastern Washington on the breathtaking Columbia River, near the <a href='http://www.fws.gov/refuge/Hanford_Reach/' target='_blank'>Hanford Reach</a>. It is one of the three main cities that make up the Tri-Cities.<br><br><a href='http://en.wikipedia.org/wiki/Pasco,_Washington' target='_blank'>Learn More</a>")
     .closePopup();
 
 </script> 
